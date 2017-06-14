@@ -46,6 +46,5 @@ cd ${WORKSPACE}/${NAME}/source/build-${BUILD_NUMBER}
 --enable-shared=yes \
 --enable-static=yes \
 --with-data-packaging=library \
---enable-plugins \
 --prefix=${SOFT_DIR}
 make

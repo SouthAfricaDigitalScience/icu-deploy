@@ -13,7 +13,6 @@ echo "All tests have passed, will now build into ${SOFT_DIR}"
 --enable-shared=yes \
 --enable-static=yes \
 --with-data-packaging=library \
---enable-plugins \
 --prefix=${SOFT_DIR}
 make
 echo "installing"
