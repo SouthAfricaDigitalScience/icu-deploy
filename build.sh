@@ -41,7 +41,7 @@ fi
 tar xfz  ${SRC_DIR}/${SOURCE_FILE} -C ${WORKSPACE} --skip-old-files
 mkdir -p ${WORKSPACE}/${NAME}/source/build-${BUILD_NUMBER}
 cd ${WORKSPACE}/${NAME}/source/build-${BUILD_NUMBER}
-CXXFLAGS="-std=c++11" ../configure \
+CFLAGS="-std=c++11" ../configure \
 --with-library-bits=64 \
 --enable-shared=yes \
 --enable-static=yes \
