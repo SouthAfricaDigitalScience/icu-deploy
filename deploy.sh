@@ -8,7 +8,8 @@ module add deploy
 echo ${SOFT_DIR}
 cd ${WORKSPACE}/${NAME}/source/build-${BUILD_NUMBER}
 echo "All tests have passed, will now build into ${SOFT_DIR}"
-../configure \
+make distclean
+CXXFLAGS="-std=c++11"  ../configure \
 --with-library-bits=64 \
 --enable-shared=yes \
 --enable-static=yes \
