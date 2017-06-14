@@ -6,7 +6,7 @@ whoami
 echo ${SOFT_DIR}
 module add deploy
 echo ${SOFT_DIR}
-cd ${WORKSPACE}/${NAME}/build-${BUILD_NUMBER}
+cd ${WORKSPACE}/${NAME}/source/build-${BUILD_NUMBER}
 echo "All tests have passed, will now build into ${SOFT_DIR}"
 ../configure \
 --with-library-bits=64 \

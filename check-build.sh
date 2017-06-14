@@ -16,7 +16,8 @@
 . /etc/profile.d/modules.sh
 module add ci
 whoami
-cd ${WORKSPACE}/${NAME}/build-${BUILD_NUMBER}
+cd ${WORKSPACE}/${NAME}/source/build-${BUILD_NUMBER}
+
 make check
 
 echo $?

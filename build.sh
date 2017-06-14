@@ -14,7 +14,6 @@
 # limitations under the License.
 
 . /etc/profile.d/modules.sh
-module avail
 module add ci
 SOURCE_FILE=${NAME}-${VERSION}.tar.gz
 
@@ -40,7 +39,7 @@ else
   echo "continuing from previous builds, using source at " ${SRC_DIR}/${SOURCE_FILE}
 fi
 tar xfz  ${SRC_DIR}/${SOURCE_FILE} -C ${WORKSPACE} --skip-old-files
-mkdir -p ${WORKSPACE}/${NAME}/build-${BUILD_NUMBER}
+mkdir -p ${WORKSPACE}/${NAME}/source/build-${BUILD_NUMBER}
 cd ${WORKSPACE}/${NAME}/build-${BUILD_NUMBER}
 ../configure \
 --with-library-bits=64 \
