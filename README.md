@@ -1,3 +1,5 @@
+[![Build Status](https://ci.sagrid.ac.za/buildStatus/icon?job=icu-deploy)](https://ci.sagrid.ac.za/job/icu-deploy/)
+
 # icu-deploy
 
 International Components for Unicode (deploy scripts)
