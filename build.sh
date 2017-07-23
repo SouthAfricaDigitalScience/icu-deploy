@@ -15,6 +15,7 @@
 
 . /etc/profile.d/modules.sh
 module add ci
+module add gcc/${GCC_VERSION}
 SOURCE_FILE=${NAME}-${VERSION}.tar.gz
 
 mkdir -p ${WORKSPACE}
@@ -46,5 +47,5 @@ CFLAGS="-std=c++11" ../configure \
 --enable-shared=yes \
 --enable-static=yes \
 --with-data-packaging=library \
---prefix=${SOFT_DIR}
+--prefix=${SOFT_DIR}-gcc-${GCC_VERSION}
 make

@@ -6,7 +6,9 @@ International Components for Unicode (deploy scripts)
 
 # Dependencies
 
-none
+  * GCC
+
+Built with : `CFLAGS="-std=c++11"`
 
 # Versions
 

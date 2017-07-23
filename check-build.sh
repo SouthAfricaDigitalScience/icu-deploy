@@ -15,7 +15,8 @@
 
 . /etc/profile.d/modules.sh
 module add ci
-whoami
+module add gcc/${GCC_VERSION}
+
 cd ${WORKSPACE}/${NAME}/source/build-${BUILD_NUMBER}
 
 make check
@@ -37,7 +38,7 @@ proc ModulesHelp { } {
 
 module-whatis   "$NAME $VERSION."
 setenv       ICU_VERSION       $VERSION
-setenv       ICU_DIR           /data/ci-build/$::env(SITE)/$::env(OS)/$::env(ARCH)/$NAME/$VERSION
+setenv       ICU_DIR           /data/ci-build/$::env(SITE)/$::env(OS)/$::env(ARCH)/$NAME/$VERSION-gcc-${GCC_VERSION}
 prepend-path LD_LIBRARY_PATH   $::env(ICU_DIR)/lib
 prepend-path GCC_INCLUDE_DIR   $::env(ICU_DIR)/include
 prepend-path CFLAGS            "-I$::env(ICU_DIR)/include"
@@ -46,7 +47,7 @@ MODULE_FILE
 ) > modules/$VERSION
 
 mkdir -vp ${LIBRARIES}/${NAME}
-cp -v modules/$VERSION ${LIBRARIES}/${NAME}
+cp -v modules/$VERSION ${LIBRARIES}/${NAME}-gcc-${GCC_VERSION}
 
 module avail ${NAME}
-module  add ${NAME}/${VERSION}
+module  add ${NAME}/${VERSION}-gcc-${GCC_VERSION}

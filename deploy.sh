@@ -2,6 +2,7 @@
 # this should be run after check-build finishes.
 . /etc/profile.d/modules.sh
 module add deploy
+module add gcc/${GCC_VERSION}
 whoami
 echo ${SOFT_DIR}
 module add deploy
@@ -14,7 +15,7 @@ CFLAGS="-std=c++11"  ../configure \
 --enable-shared=yes \
 --enable-static=yes \
 --with-data-packaging=library \
---prefix=${SOFT_DIR}
+--prefix=${SOFT_DIR}-gcc-${GCC_VERSION}
 make
 echo "installing"
 make install
@@ -32,15 +33,15 @@ proc ModulesHelp { } {
 
 module-whatis   "$NAME $VERSION : See https://github.com/SouthAfricaDigitalScience/ICU-deploy"
 setenv ICU_VERSION       $VERSION
-setenv ICU_DIR           $::env(CVMFS_DIR)/$::env(SITE)/$::env(OS)/$::env(ARCH)/$NAME/$VERSION
+setenv ICU_DIR           $::env(CVMFS_DIR)/$::env(SITE)/$::env(OS)/$::env(ARCH)/$NAME/$VERSION-gcc-${GCC_VERSION}
 prepend-path PATH                            $::env(ICU_DIR)/bin
 prepend-path LD_LIBRARY_PATH   $::env(ICU_DIR)/lib
 prepend-path GCC_INCLUDE_DIR   $::env(ICU_DIR)/include
 prepend-path CFLAGS            "-I$::env(ICU_DIR)/include"
 prepend-path LDFLAGS           "-L$::env(ICU_DIR)/lib"
 MODULE_FILE
-) > ${LIBRARIES}/${NAME}/${VERSION}
+) > ${LIBRARIES}/${NAME}/${VERSION}-gcc-${GCC_VERSION}
 
 echo "testing module"
 module avail ${NAME}
-module add ${NAME}/${VERSION}
+module add ${NAME}/${VERSION}-gcc-${GCC_VERSION}
