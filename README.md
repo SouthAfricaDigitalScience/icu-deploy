@@ -1,4 +1,4 @@
-[![Build Status](https://ci.sagrid.ac.za/buildStatus/icon?job=icu-deploy)](https://ci.sagrid.ac.za/job/icu-deploy/)
+[![DOI](https://zenodo.org/badge/94328623.svg)](https://zenodo.org/badge/latestdoi/94328623) [![Build Status](https://ci.sagrid.ac.za/buildStatus/icon?job=icu-deploy)](https://ci.sagrid.ac.za/job/icu-deploy/)
 
 # icu-deploy
 
@@ -19,3 +19,7 @@ We build :
   * 59_1
 
 # Citing
+
+Cite as :
+
+Bruce Becker. (2017, July 23). SouthAfricaDigitalScience/icu-deploy: CODE-RADE Foundation Release 3 - ICU. Zenodo. http://doi.org/10.5281/zenodo.834003
