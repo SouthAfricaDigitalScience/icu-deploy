@@ -44,10 +44,10 @@ prepend-path GCC_INCLUDE_DIR   $::env(ICU_DIR)/include
 prepend-path CFLAGS            "-I$::env(ICU_DIR)/include"
 prepend-path LDFLAGS           "-L$::env(ICU_DIR)/lib"
 MODULE_FILE
-) > modules/$VERSION
+) > modules/$VERSION-gcc-${GCC_VERSION}
 
 mkdir -vp ${LIBRARIES}/${NAME}
-cp -v modules/$VERSION ${LIBRARIES}/${NAME}-gcc-${GCC_VERSION}
+cp -v modules/$VERSION-gcc-${GCC_VERSION} ${LIBRARIES}/${NAME}-gcc-${GCC_VERSION}
 
 module avail ${NAME}
 module  add ${NAME}/${VERSION}-gcc-${GCC_VERSION}
