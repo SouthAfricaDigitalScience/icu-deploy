@@ -2,7 +2,9 @@
 
 # icu-deploy
 
-International Components for Unicode (deploy scripts)
+Build, test and deploy scripts for the International Components for Unicode (ICU) in CODE-RADE.
+
+This project is  needed for several downstream projects which require unicode libraries, such as [libxml2](https://ci.sagrid.ac.za/job/libxml2-deploy/) and [boost C++](https://ci.sagrid.ac.za/job/boost-deploy/).
 
 # Dependencies
 
