@@ -47,7 +47,7 @@ MODULE_FILE
 ) > modules/$VERSION-gcc-${GCC_VERSION}
 
 mkdir -vp ${LIBRARIES}/${NAME}
-cp -v modules/$VERSION-gcc-${GCC_VERSION} ${LIBRARIES}/${NAME}-gcc-${GCC_VERSION}
+cp -v modules/$VERSION-gcc-${GCC_VERSION} ${LIBRARIES}/${NAME}
 
 module avail ${NAME}
 module  add ${NAME}/${VERSION}-gcc-${GCC_VERSION}
