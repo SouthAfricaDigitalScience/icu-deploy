@@ -15,7 +15,6 @@ CFLAGS="-std=c++11"  ../configure \
 --enable-shared=yes \
 --enable-static=yes \
 --with-data-packaging=library \
---enable-rpath \
 --prefix=${SOFT_DIR}-gcc-${GCC_VERSION}
 make
 echo "installing"
