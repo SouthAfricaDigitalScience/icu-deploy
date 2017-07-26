@@ -39,10 +39,12 @@ proc ModulesHelp { } {
 module-whatis   "$NAME $VERSION."
 setenv       ICU_VERSION       $VERSION
 setenv       ICU_DIR           /data/ci-build/$::env(SITE)/$::env(OS)/$::env(ARCH)/$NAME/$VERSION-gcc-${GCC_VERSION}
+prepend-path PATH                            $::env(ICU_DIR)/bin
 prepend-path LD_LIBRARY_PATH   $::env(ICU_DIR)/lib
 prepend-path GCC_INCLUDE_DIR   $::env(ICU_DIR)/include
 prepend-path CFLAGS            "-I$::env(ICU_DIR)/include"
 prepend-path LDFLAGS           "-L$::env(ICU_DIR)/lib"
+
 MODULE_FILE
 ) > modules/$VERSION-gcc-${GCC_VERSION}
 
